@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="it.docdev.mypiggybank">
+
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/piggybank"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/piggybank"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activities.StartScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.Tour1" />
+        <activity android:name=".activities.Tour2" />
+        <activity android:name=".auth.FingerprintAuthActivity" />
+        <activity
+            android:name=".activities.UserActivity"
+            android:label="@string/title_activity_user"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activities.WalletListActivity" />
+        <activity
+            android:name=".activities.WalletDetailedActivity"
+            android:label="@string/title_activity_wallet_detailed"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.WalletSettingsActivity"
+            android:parentActivityName=".activities.WalletDetailedActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.WalletDetailedActivity" />
+        </activity>
+        <activity
+            android:name=".activities.WalletAccessPassActivity"
+            android:label="@string/title_activity_wallet_access_pass"></activity>
+    </application>
+
+</manifest>
